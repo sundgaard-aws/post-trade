@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/index.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../static/index.js"></script>
+</head>
+
+<body>
+    <header class="jumbotron">
+        <h1 class="display-4">Post Trade UI</h1>
+        <p class="lead">A UI for assisting with post trade processes.</p>
+    </header>
+
+    <div class="container" id="tabControl">
+        <ul class="nav nav-tabs" id="myTabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#nettings">Nettings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#dealCapture">Deal Capture</a>
+            </li>
+        </ul>
+    
+        <div class="tab-content mt-2">
+            <div class="tab-pane fade show active" id="home">
+                <h4>Home Tab Content</h4>
+                <p>This is the home tab content.</p>
+            </div>
+            <div class="tab-pane fade" id="nettings">
+                <h4>Nettings Tab Content</h4>
+                <p>This is the nettings tab content.</p>
+            </div>
+            <div class="tab-pane fade" id="dealCapture">
+                <h4>Deal Capture Tab Content</h4>
+                <p>This is the deal capture tab content.</p>
+                <div id="selectDiv" class="mt-2">
+                    <label for="selectOption">Select an option:</label>
+                    <select id="selectOption" class="form-control">
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="tradeNettings" class="container">
+        <h2>Trade nettings</h2>
+        <div id="tradeNettings" class="container">
+            <div class="row">
+                <div class="col"><div class="header-column">Counterparty</div></div>
+                <div class="col"><div class="header-column">Security</div></div>
+                <div class="col"><div class="header-column">Trade Date</div></div>
+                <div class="col"><div class="header-column">Settlement Date</div></div>
+                <div class="col"><div class="header-column">Trade Amount</div></div>
+                <div class="col"><div class="header-column">Net Position</div></div>
+            </div>
+            <div class="row">
+                <div class="col"><div class="data-column">Counterparty A</div></div>
+                <div class="col"><div class="data-column">Security X</div></div>
+                <div class="col"><div class="data-column">2023-06-15</div></div>
+                <div class="col"><div class="data-column">2023-06-20</div></div>
+                <div class="col"><div class="data-column">100,000</div></div>
+                <div class="col"><div class="data-column">500,000</div></div>
+            </div>
+            <div class="row">
+                <div class="col"><div class="data-column">Counterparty B</div></div>
+                <div class="col"><div class="data-column">Security Y</div></div>
+                <div class="col"><div class="data-column">2023-06-18</div></div>
+                <div class="col"><div class="data-column">2023-06-23</div></div>
+                <div class="col"><div class="data-column">150,000</div></div>
+                <div class="col"><div class="data-column">-250,000</div></div>
+            </div>
+            <div class="row">
+                <div class="col"><div class="data-column">Counterparty C</div></div>
+                <div class="col"><div class="data-column">Security Z</div></div>
+                <div class="col"><div class="data-column">2023-06-20</div></div>
+                <div class="col"><div class="data-column">2023-06-25</div></div>
+                <div class="col"><div class="data-column">200,000</div></div>
+                <div class="col"><div class="data-column">700,000</div></div>
+            </div>
+        </div>
+        
+    </div>
+    <div id="dealCapture" class="container">
+        <h2>Deal Capture</h2>
+        <form>
+            <div class="form-group">
+                <label for="tradeId">Trade ID</label>
+                <input type="text" class="form-control" id="tradeId" placeholder="Enter Trade ID">
+            </div>
+            <div class="form-group">
+                <label for="counterparty">Counterparty</label>
+                <input type="text" class="form-control" id="counterparty" placeholder="Enter Counterparty">
+            </div>
+            <div class="form-group">
+                <label for="security">Security</label>
+                <input type="text" class="form-control" id="security" placeholder="Enter Security">
+            </div>
+            <div class="form-group">
+                <label for="tradeDate">Trade Date</label>
+                <input type="date" class="form-control" id="tradeDate">
+            </div>
+            <div class="form-group">
+                <label for="settlementDate">Settlement Date</label>
+                <input type="date" class="form-control" id="settlementDate">
+            </div>
+            <div class="form-group">
+                <label for="tradeAmount">Trade Amount</label>
+                <input type="number" class="form-control" id="tradeAmount" placeholder="Enter Trade Amount">
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" placeholder="Enter Price">
+            </div>
+            <div class="form-group">
+                <label for="notional">Notional</label>
+                <input type="number" class="form-control" id="notional" placeholder="Enter Notional">
+            </div>
+            <div class="form-group">
+                <label for="currency">Currency</label>
+                <select class="form-control" id="currency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="buySell">Buy/Sell</label>
+                <select class="form-control" id="buySell">
+                    <option value="Buy">Buy</option>
+                    <option value="Sell">Sell</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="bookingStatus">Booking Status</label>
+                <select class="form-control" id="bookingStatus">
+                    <option value="Pending">Pending</option>
+                    <option value="Booked">Booked</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="traderId">Trader ID</label>
+                <input type="text" class="form-control" id="traderId" placeholder="Enter Trader ID">
+            </div>
+            <div class="form-group">
+                <label for="salesPersonId">Sales Person ID</label>
+                <input type="text" class="form-control" id="salesPersonId" placeholder="Enter Sales Person ID">
+            </div>
+            <div class="form-group">
+                <label for="bookId">Book ID</label>
+                <input type="text" class="form-control" id="bookId" placeholder="Enter Book ID">
+            </div>
+            <div class="form-group">
+                <label for="portfolioId">Portfolio ID</label>
+                <input type="text" class="form-control" id="portfolioId" placeholder="Enter Portfolio ID">
+            </div>
+            <div class="form-group">
+                <label for="executionVenue">Execution Venue</label>
+                <input type="text" class="form-control" id="executionVenue" placeholder="Enter Execution Venue">
+            </div>
+            <div class="form-group">
+                <label for="sourceSystem">Source System</label>
+                <input type="text" class="form-control" id="sourceSystem" placeholder="Enter Source System">
+            </div>
+            <div class="form-group">
+                <label for="traderComment">Trader Comment</label>
+                <textarea class="form-control" id="traderComment" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="salesComment">Sales Comment</label>
+                <textarea class="form-control" id="salesComment" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    
+    <div class="toolbar">
+        <img class="toolbar-icon" src="../static/toolbar/48/Golden-Book-icon.png" alt="Book">
+        <img class="toolbar-icon" src="../static/toolbar/48/Ecommerce-Price-Tag-Usd-icon.png" alt="Price">
+        <img class="toolbar-icon" src="../static/toolbar/48/Price-icon.png" alt="Price">
+        <img class="toolbar-icon" src="../static/toolbar/48/Trash-icon.png" alt="Cancel">
+    </div>  
+</body>
+
+</html>
